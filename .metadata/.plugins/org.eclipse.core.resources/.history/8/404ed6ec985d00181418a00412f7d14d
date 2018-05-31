@@ -1,0 +1,5 @@
+package com.deloitte.fi.estore.Categories.repository;
+
+public class Repository {
+
+}

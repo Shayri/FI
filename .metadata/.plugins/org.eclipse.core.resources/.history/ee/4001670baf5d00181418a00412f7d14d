@@ -1,0 +1,11 @@
+server.port=8081
+
+#logging level
+logging.level.root=info
+
+#database  Configuration mongodb+srv://root:<PASSWORD>@categories-g3okf.mongodb.net/test?retryWrites=true
+spring.data.mongodb.host=categories-g3okf.mongodb.net
+spring.data.mongodb.database=estore
+spring.data.mongodb.username=root
+spring.data.mongodb.password=root
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.data.mongodb.repository.Query"/>
+<fullyQualifiedTypeName name="com.deloitte.fi.estore.Categories.model.Category"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,21 @@
+package com.deloitte.fi.estore.Categories.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.deloitte.fi.estore.Categories.model.Category;
+import com.deloitte.fi.estore.Categories.repository.CategoryRepository;
+
+@RestController
+public class CategoryController {
+	@Autowired
+    CategoryRepository categoryRepository;
+	
+	@RequestMapping(method=RequestMethod.GET, value="/categories")
+    public Iterable<Category> product() {
+        return categoryRepository.findAll();
+    }
+
+}

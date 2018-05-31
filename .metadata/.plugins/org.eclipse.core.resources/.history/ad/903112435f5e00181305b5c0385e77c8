@@ -1,0 +1,50 @@
+package com.deloitte.fi.estore.Categories.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.deloitte.fi.estore.Categories.model.Category;
+import com.deloitte.fi.estore.Categories.service.CategoryService;
+
+@RestController
+@RequestMapping("/Category")
+@CrossOrigin("*")
+public class CategoryController {
+	@Autowired
+    CategoryService categoryService;
+	
+	@RequestMapping(method=RequestMethod.GET, value="/{id}")
+    public Category save(@PathVariable String id, @RequestBody Category category) {
+        return categoryService.save(category);
+    }
+	
+	@RequestMapping(method=RequestMethod.GET, value="/getAllCategories")
+    public Iterable<Category> category() {
+        return categoryService.findAll();
+    }
+	
+	@RequestMapping(method=RequestMethod.GET, value="/{id}")
+    public Category show(@PathVariable String id) {
+        return categoryService.findOne(id);
+    }
+
+	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
+    public Category update(@PathVariable String id, @RequestBody Category category) {
+		Category cate = categoryService.findOne(id);
+        if(category.getTitle() != null)
+        	cate.setTitle(category.getTitle());
+        return cate;
+    }
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
+    public String delete(@PathVariable String id) {
+        Category category = categoryService.findOne(id);
+        categoryService.delete(category);
+        return "Category deleted";
+    }
+}

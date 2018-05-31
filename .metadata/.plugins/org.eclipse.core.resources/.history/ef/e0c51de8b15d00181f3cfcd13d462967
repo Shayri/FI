@@ -1,0 +1,13 @@
+package com.deloitte.fi.estore.Categories.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.deloitte.fi.estore.Categories.repository.CategoryRepository;
+
+@RestController
+public class CategoryController {
+	@Autowired
+    CategoryRepository categoryRepository;
+
+}
